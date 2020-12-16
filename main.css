@@ -1,11 +1,23 @@
 body{
     width: 100vw;
-    height: 100vh;
+    height: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
+    background-color: #222831;
+    font-family: 'Nunito', sans-serif;
+}
+h1{
+    color: #ffd369;
+}
+h2{
+    color: #ffd369;
+}
+p{
+    color: #eeeeee;
+    text-align: center;
+    margin: 0px 0px 10px 0px;
 }
 .game {
     display: flex;
@@ -15,4 +27,10 @@ body{
     display: flex;
     flex-direction: column;
     padding: 30px;
+}
+.info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
