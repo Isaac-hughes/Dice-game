@@ -19,7 +19,6 @@ const randomNum =  () => {
 
 const playerTurn = () => {
     let num = randomNum();
-    console.log('Ranom number', num)
     if (num == 1){
         playerScore = 0;
         playerScoreID.textContent = `${playerScore}`;
@@ -51,12 +50,10 @@ const playerTurn = () => {
         action.textContent = "Roll!";
         playerDice.src = "img/dice6.png"
     }
-    console.log('new Player score', playerScore)
 }
 
 const computerTurn = () => {
     let num = randomNum();
-    console.log('Ranom number', num)
     if (num == 1){
         computerScore = 0;
         computerScoreID.textContent = `${computerScore}`;
@@ -83,7 +80,6 @@ const computerTurn = () => {
         computerDice.src = "img/dice6.png"
 
     }
-    console.log('new computer score', computerScore)
 }
 
 button.addEventListener("click", () => {
@@ -97,8 +93,6 @@ button.addEventListener("click", () => {
         action.textContent = "You lose! Play Again!"
     } else {
         playerTurn()
-        console.log('new Player score', playerScore)
         computerTurn()
-        console.log('new Player score', computerScore)
     }
 })

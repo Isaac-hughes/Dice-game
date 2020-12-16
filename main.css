@@ -46,9 +46,6 @@ button {
         display: flex;
         flex-direction: column;
     }
-    .area {
-        width 70%
-    }
     h1, h2 {
         padding: 0;
         margin: 0;
