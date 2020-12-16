@@ -5,6 +5,8 @@ const button = document.getElementById("diceRoll")
 const playerScoreID = document.getElementById("playerScore")
 const computerScoreID = document.getElementById("computerScore")
 const action = document.getElementById("action")
+const playerDice = document.getElementById("playerDice")
+const computerDice = document.getElementById("computerDice")
 
 
 const randomNum =  () => {
@@ -22,26 +24,32 @@ const playerTurn = () => {
         playerScore = 0;
         playerScoreID.textContent = `${playerScore}`;
         action.textContent = "Back to 0";
+        playerDice.src = "img/dice1.png"
     } else if (num == 2){
         playerScore = playerScore + 2;
         playerScoreID.textContent = `${playerScore}`;
         action.textContent = "Roll!";
+        playerDice.src = "img/dice2.png"
     } else if (num == 3){
         playerScore = playerScore + 3;
         playerScoreID.textContent = `${playerScore}`;
         action.textContent = "Roll!";
+        playerDice.src = "img/dice3.png"
     } else if (num == 4){
         playerScore = playerScore + 4;
         playerScoreID.textContent = `${playerScore}`;
         action.textContent = "Roll!";
+        playerDice.src = "img/dice4.png"
     } else if (num == 5){
         playerScore = playerScore + 5;
         playerScoreID.textContent = `${playerScore}`;
         action.textContent = "Roll!";
+        playerDice.src = "img/dice5.png"
     } else {
         playerScore = playerScore + 6;
         playerScoreID.textContent = `${playerScore}`;
         action.textContent = "Roll!";
+        playerDice.src = "img/dice6.png"
     }
     console.log('new Player score', playerScore)
 }
@@ -52,29 +60,45 @@ const computerTurn = () => {
     if (num == 1){
         computerScore = 0;
         computerScoreID.textContent = `${computerScore}`;
+        computerDice.src = "img/dice1.png"
     } else if (num == 2){
         computerScore = computerScore + 2;
         computerScoreID.textContent = `${computerScore}`;
+        computerDice.src = "img/dice2.png"
     } else if (num == 3){
         computerScore = computerScore + 3;
         computerScoreID.textContent = `${computerScore}`;
+        computerDice.src = "img/dice3.png"
     } else if (num == 4){
         computerScore = computerScore + 4;
         computerScoreID.textContent = `${computerScore}`;
+        computerDice.src = "img/dice4.png"
     } else if (num == 5){
         computerScore = computerScore + 5;
         computerScoreID.textContent = `${computerScore}`;
+        computerDice.src = "img/dice5.png"
     } else {
         computerScore = computerScore + 6;
         computerScoreID.textContent = `${computerScore}`;
+        computerDice.src = "img/dice6.png"
 
     }
     console.log('new computer score', computerScore)
 }
 
 button.addEventListener("click", () => {
-    playerTurn()
-    console.log('new Player score', playerScore)
-    computerTurn()
-    console.log('new Player score', computerScore)
+    if (playerScore >= 30){
+        playerScore = 0;
+        computerScore = 0;
+        action.textContent = "You Win! Play Again!"
+    }else if (computerScore >= 30){
+        playerScore = 0;
+        computerScore = 0;
+        action.textContent = "You lose! Play Again!"
+    } else {
+        playerTurn()
+        console.log('new Player score', playerScore)
+        computerTurn()
+        console.log('new Player score', computerScore)
+    }
 })
