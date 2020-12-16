@@ -34,3 +34,26 @@ p{
     justify-content: center;
     align-items: center;
 }
+button {
+    border: none;
+    width: 60px;
+    height: 60px;
+    margin: 0;
+    padding: 10px;
+}
+@media (max-width: 600px){
+    .game{
+        display: flex;
+        flex-direction: column;
+    }
+    .area {
+        width 70%
+    }
+    h1, h2 {
+        padding: 0;
+        margin: 0;
+    }
+    .info {
+        width: 90%;
+    }
+}
