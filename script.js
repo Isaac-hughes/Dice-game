@@ -2,7 +2,8 @@ let playerScore = 0;
 let computerScore = 0;
 let roll = 0;
 const button = document.getElementById("diceRoll")
-const score = document.getElementById("score")
+const playerScoreID = document.getElementById("playerScore")
+const computerScoreID = document.getElementById("computerScore")
 const action = document.getElementById("action")
 
 
@@ -13,73 +14,67 @@ const randomNum =  () => {
     return roll;
 }
 
-const playerTurn = (playerScore, action, score) => {
+
+const playerTurn = () => {
     let num = randomNum();
-    console.log(num)
+    console.log('Ranom number', num)
     if (num == 1){
         playerScore = 0;
-        score.textContent = `${playerScore}`;
+        playerScoreID.textContent = `${playerScore}`;
         action.textContent = "Back to 0";
     } else if (num == 2){
         playerScore = playerScore + 2;
-        score.textContent = `${playerScore}`;
+        playerScoreID.textContent = `${playerScore}`;
         action.textContent = "Roll!";
     } else if (num == 3){
         playerScore = playerScore + 3;
-        score.textContent = `${playerScore}`;
+        playerScoreID.textContent = `${playerScore}`;
         action.textContent = "Roll!";
     } else if (num == 4){
         playerScore = playerScore + 4;
-        score.textContent = `${playerScore}`;
+        playerScoreID.textContent = `${playerScore}`;
         action.textContent = "Roll!";
     } else if (num == 5){
         playerScore = playerScore + 5;
-        score.textContent = `${playerScore}`;
+        playerScoreID.textContent = `${playerScore}`;
         action.textContent = "Roll!";
     } else {
         playerScore = playerScore + 6;
-        score.textContent = `${playerScore}`;
+        playerScoreID.textContent = `${playerScore}`;
         action.textContent = "Roll!";
     }
-    return (playerScore)
+    console.log('new Player score', playerScore)
 }
 
+const computerTurn = () => {
+    let num = randomNum();
+    console.log('Ranom number', num)
+    if (num == 1){
+        computerScore = 0;
+        computerScoreID.textContent = `${computerScore}`;
+    } else if (num == 2){
+        computerScore = computerScore + 2;
+        computerScoreID.textContent = `${computerScore}`;
+    } else if (num == 3){
+        computerScore = computerScore + 3;
+        computerScoreID.textContent = `${computerScore}`;
+    } else if (num == 4){
+        computerScore = computerScore + 4;
+        computerScoreID.textContent = `${computerScore}`;
+    } else if (num == 5){
+        computerScore = computerScore + 5;
+        computerScoreID.textContent = `${computerScore}`;
+    } else {
+        computerScore = computerScore + 6;
+        computerScoreID.textContent = `${computerScore}`;
+
+    }
+    console.log('new computer score', computerScore)
+}
 
 button.addEventListener("click", () => {
-    // playerTurn(playerScore, action, score)
-
-    // Player turn
-    let num = randomNum();
-    console.log(num)
-    if (num == 1){
-        playerScore = 0;
-        score.textContent = `${playerScore}`;
-        action.textContent = "Back to 0";
-    } else if (num == 2){
-        playerScore = playerScore + 2;
-        score.textContent = `${playerScore}`;
-        action.textContent = "Roll!";
-    } else if (num == 3){
-        playerScore = playerScore + 3;
-        score.textContent = `${playerScore}`;
-        action.textContent = "Roll!";
-    } else if (num == 4){
-        playerScore = playerScore + 4;
-        score.textContent = `${playerScore}`;
-        action.textContent = "Roll!";
-    } else if (num == 5){
-        playerScore = playerScore + 5;
-        score.textContent = `${playerScore}`;
-        action.textContent = "Roll!";
-    } else {
-        playerScore = playerScore + 6;
-        score.textContent = `${playerScore}`;
-        action.textContent = "Roll!";
-    }
-    console.log(playerScore)
-
-
-    // Computer Turn
-
-    
+    playerTurn()
+    console.log('new Player score', playerScore)
+    computerTurn()
+    console.log('new Player score', computerScore)
 })
