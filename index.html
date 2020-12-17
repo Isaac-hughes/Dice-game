@@ -9,20 +9,34 @@
     <title>Dice Game</title>
 </head>
 <body>
+    <svg viewBox="0 0 960 300">
+        <symbol id="s-text">
+            <text text-anchor="middle" x="50%" y="80%">The Dice Game</text>
+        </symbol>
+    
+        <g class = "g-ants">
+            <use xlink:href="#s-text" class="text-copy"></use>
+            <use xlink:href="#s-text" class="text-copy"></use>
+            <use xlink:href="#s-text" class="text-copy"></use>
+            <use xlink:href="#s-text" class="text-copy"></use>
+            <use xlink:href="#s-text" class="text-copy"></use>
+        </g>
+    </svg>
+
     <h1 id="action">Roll The Dice</h1>
     <div class="game">
         <div class="area">
             <h1>Player</h1>
             <h2>Score</h2>
             <h2 id="playerScore"></h2>
-            <img src="img/dice1.png" alt="Dice" id="playerDice">
+            <img src="img/dice1.png" alt="Dice" id="playerDice" class="diceImg">
         </div>
         
         <div class="area">
             <h1>Computer</h1>
             <h2>Score</h2>
             <h2 id="computerScore"></h2>
-            <img src="img/dice1.png" alt="Dice" id="computerDice">
+            <img src="img/dice1.png" alt="Dice" id="computerDice" class="diceImg">
         </div>
         
     </div>

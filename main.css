@@ -5,14 +5,63 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #222831;
+    background-color: #222231;
     font-family: 'Nunito', sans-serif;
+    overflow-x: hidden;
+    
+}
+svg {
+    display: block;
+    font: 7.5em 'Nunito';
+    width: auto;
+    height: auto;
+    max-height: 200px;
+    margin: 0 0;
+    
+}
+
+.text-copy {
+    fill: none;
+    /* stroke: white; */
+    stroke-dasharray: 6% 29%;
+    stroke-width: 5px;
+    stroke-dashoffset: 0%;
+    animation: stroke-offset 5.5s infinite linear;
+}
+
+.text-copy:nth-child(1){
+	stroke: #4D163D;
+	animation-delay: -1;
+}
+
+.text-copy:nth-child(2){
+	stroke: #840037;
+	animation-delay: -2s;
+}
+
+.text-copy:nth-child(3){
+	stroke: #BD0034;
+	animation-delay: -3s;
+}
+
+.text-copy:nth-child(4){
+	stroke: #BD0034;
+	animation-delay: -4s;
+}
+
+.text-copy:nth-child(5){
+	stroke: #fdb731;
+	animation-delay: -5s;
+}
+
+@keyframes stroke-offset{
+	100% {stroke-dashoffset: -35%;}
 }
 h1{
-    color: #ffd369;
+    color: #fdb731;
 }
 h2{
-    color: #ffd369;
+    color: #fdb731;
 }
 p{
     color: #eeeeee;
@@ -28,6 +77,9 @@ p{
     flex-direction: column;
     padding: 30px;
 }
+.diceImg {
+    border-radius: 8px;
+}
 .info{
     display: flex;
     flex-direction: column;
@@ -40,7 +92,9 @@ button {
     height: 60px;
     margin: 0;
     padding: 10px;
+    border-radius: 8px;
 }
+
 @media (max-width: 600px){
     .game{
         display: flex;
@@ -52,5 +106,21 @@ button {
     }
     .info {
         width: 90%;
+    }
+    svg {
+        display: block;
+        font: 7.5em 'Nunito';
+        width: auto;
+        height: 100px;
+        margin: 0 0;
+        overflow: hidden;
+    }
+    .text-copy {
+        fill: none;
+        stroke: white;
+        stroke-dasharray: 6% 29%;
+        stroke-width: 4px;
+        stroke-dashoffset: 0%;
+        animation: stroke-offset 5.5s infinite linear;
     }
 }
